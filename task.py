@@ -87,17 +87,17 @@ def offerFunction(qa,qb,qc,wa,wb,wc):
     print("sub total: "+str(tp))
     if offer==1:
         if op==op1:
-            print("offer: flat_10_discount \ndiscount amount: "+str(tp-op1))
+            print("offer applied: flat_10_discount \ndiscount amount: "+str(tp-op1))
         elif op==op2:
-            print("offer: bulk_5_discount \ndiscount amount: "+str(tp-op2))
+            print("offer applied: bulk_5_discount \ndiscount amount: "+str(tp-op2))
         elif op==op3:
-            print("offer: bulk_10_discount \ndiscount amount: "+str(tp-op3))
+            print("offer applied: bulk_10_discount \ndiscount amount: "+str(tp-op3))
         elif op==op4:
-            print("offer: tiered_50_discount \ndiscount amount: "+str(tp-op4))
+            print("offer applied: tiered_50_discount \ndiscount amount: "+str(tp-op4))
     else:
-        print("offer: no offer applicable \ndiscount amount: "+str(0))
+        print("no offer applicable for this purchase")
     print("shipping fee: "+str(sp)+" \ngift wrap fee: "+str(gwp))
-    print("total: "+str(op+sp+gwp))
+    print("total amount to be paid: "+str(op+sp+gwp))
 
 
 
