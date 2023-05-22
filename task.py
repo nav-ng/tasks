@@ -34,15 +34,15 @@ def offerFunction(qa,qb,qc,wa,wb,wc):
                     while j<4:
                         if j==1:
                             if qa>10:
-                                tpa-=tpa*(5/100)
+                                tpa-=tpa*(0.05)
                             j+=1
                         elif j==2:
                             if qb>10:
-                                tpb-=tpb*(5/100)
+                                tpb-=tpb*(0.05)
                             j+=1
                         elif j==3:        
                             if qc>10:
-                                tpc-=tpc*(5/100)
+                                tpc-=tpc*(0.05)
                             j+=1    
                     op2=tpa+tpb+tpc
                     tpa=tpa1
@@ -51,28 +51,34 @@ def offerFunction(qa,qb,qc,wa,wb,wc):
                 i+=1
             elif i==3:
                 if tq>20:
-                    tp-=tp*(10/100)
+                    tp-=tp*(0.1)
                     op3=tp
                     tp=tp1
                 i+=1
             elif i==4:
                 if tq>30:
-                    if (qa>15 and qb<=15 and qc<=15) or (qa<=15 and qb>15 and qc<=15) or (qa<=15 and qb<=15 and qc>15):
-                        if qa>15:
-                            n=qa-15
-                            tpa=300+(n*10)
-                            op4=tpa+tpb+tpc
-                            tpa=tpa1
-                        elif qb>15:
-                            n=qb-15
-                            tpb=600+(n*20)
-                            op4=tpa+tpb+tpc
-                            tpb=tpb1
-                        elif qc>15:
-                            n=qc-15
-                            tpc=750+(n*25)
-                            op4=tpa+tpb+tpc
-                            tpc=tpc1
+                    if (qa>15 or qb>15 or qc>15):
+                        k=1
+                        while k<4:
+                            if k==1: 
+                                if qa>15:
+                                    n=qa-15
+                                    tpa=300+(n*10)
+                                k+=1
+                            elif k==2:
+                                if qb>15:
+                                    n=qb-15
+                                    tpb=600+(n*20)
+                                k+=1
+                            elif k==3:
+                                if qc>15:
+                                    n=qc-15
+                                    tpc=750+(n*25)
+                                k+=1
+                        op4=tpa+tpb+tpc
+                        tpa=tpa1
+                        tpb=tpb1
+                        tpc=tpc1
                 i+=1
     list1=[op1, op2, op3, op4]
     op=min(list1)
