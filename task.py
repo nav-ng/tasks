@@ -28,26 +28,34 @@ def offerFunction(qa,qb,qc,wa,wb,wc):
                     op1=tp
                     tp=tp1
                 i+=1
-            if i==2:
+            elif i==2:
                 if qa>10 or qb>10 or qc>10:
-                    if qa>10:
-                        tpa-=tpa*(5/100)
-                    elif qb>10:
-                        tpb-=tpb*(5/100)
-                    elif qc>10:
-                        tpc-=tpc*(5/100)
+                    j=1
+                    while j<4:
+                        if j==1:
+                            if qa>10:
+                                tpa-=tpa*(5/100)
+                            j+=1
+                        elif j==2:
+                            if qb>10:
+                                tpb-=tpb*(5/100)
+                            j+=1
+                        elif j==3:        
+                            if qc>10:
+                                tpc-=tpc*(5/100)
+                            j+=1    
                     op2=tpa+tpb+tpc
                     tpa=tpa1
                     tpb=tpb1
                     tpc=tpc1
                 i+=1
-            if i==3:
+            elif i==3:
                 if tq>20:
                     tp-=tp*(10/100)
                     op3=tp
                     tp=tp1
                 i+=1
-            if i==4:
+            elif i==4:
                 if tq>30:
                     if (qa>15 and qb<=15 and qc<=15) or (qa<=15 and qb>15 and qc<=15) or (qa<=15 and qb<=15 and qc>15):
                         if qa>15:
